@@ -1,33 +1,45 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px; }
+  .App .Filters .panel-heading:hover {
+    cursor: pointer; }
+  .App .Filters .panel-title {
+    font-weight: 600; }
+  .App-navbar {
+    font-family: "Oswald", sans-serif; }
+    .App-navbar.navbar {
+      -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+      border: 0;
+      border-radius: 0;
+      border-bottom: 1px #b5b5b5 solid; }
+      .App-navbar.navbar .navbar-nav {
+        padding: 0 3px; }
+        @media screen and (min-width: 768px) {
+          .App-navbar.navbar .navbar-nav {
+            padding: 0; } }
+        .App-navbar.navbar .navbar-nav a {
+          color: black; }
+          .App-navbar.navbar .navbar-nav a:hover {
+            color: #f11e22;
+            background-color: initial; }
+          .App-navbar.navbar .navbar-nav a .h4 {
+            font-weight: 600; }
+        .App-navbar.navbar .navbar-nav > li.active > a {
+          color: #f11e22; }
+  .App-characters {
+    display: flex;
+    flex-flow: row wrap; }
+    .App-characters .Character {
+      width: 100%; }
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        .App-characters .Character {
+          width: 33%; }
+          .App-characters .Character:not(:nth-child(3n+1)) {
+            margin-left: .5%; } }
+      @media screen and (min-width: 992px) {
+        .App-characters .Character {
+          width: 24.5%; }
+          .App-characters .Character:not(:nth-child(4n+1)) {
+            margin-left: .66%; } }
