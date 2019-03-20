@@ -37,6 +37,34 @@
     opacity: 1;
   }
 }
-.Character-modal-img{
-  width: 100%;
+
+.Character-img {
+  cursor: pointer;
+}
+
+.Character-modal-img {
+  height: 200px;
+  width: 200px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-body {
+  display: flex;
+  padding-bottom: 50px;
+}
+.modal-header{
+  display: flex;
+  button{
+    position: absolute;
+    right: 10px;
+  }
+}
+.Loading{
+  position: absolute;
+  bottom: 0;
+  left: 41%;
+}
+.img-circle {
+  border-radius: 0;
 }
