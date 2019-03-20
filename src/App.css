@@ -28,18 +28,19 @@
             font-weight: 600; }
         .App-navbar.navbar .navbar-nav > li.active > a {
           color: #f11e22; }
-  .App-characters {
+
+.Character {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+  border: 1px solid #ccc; }
+  .Character .Character-header {
     display: flex;
-    flex-flow: row wrap; }
-    .App-characters .Character {
-      width: 100%; }
-      @media screen and (min-width: 768px) and (max-width: 991px) {
-        .App-characters .Character {
-          width: 33%; }
-          .App-characters .Character:not(:nth-child(3n+1)) {
-            margin-left: .5%; } }
-      @media screen and (min-width: 992px) {
-        .App-characters .Character {
-          width: 24.5%; }
-          .App-characters .Character:not(:nth-child(4n+1)) {
-            margin-left: .66%; } }
+    border-bottom: 1px solid #ccc; }
+    .Character .Character-header div {
+      text-align: center;
+      color: #f11e22; }
+      .Character .Character-header div:first-child {
+        width: 33.3333333%; }
+      .Character .Character-header div:last-child {
+        width: 66.6666666%;
+        border-left: 1px solid #ccc; }

@@ -1,0 +1,25 @@
+.Paginator {
+  &-go2Page {
+    width: 100px;
+  }
+  .pagination> {
+    li> {
+      button:hover,
+      button:focus,
+      span:hover,
+      span:focus {
+        font-weight: 600;
+      }
+    }
+    .active> {
+      button,
+      button:focus,
+      button:hover,
+      span,
+      span:focus,
+      span:hover {
+        font-weight: 600;
+      }
+    }
+  }
+}

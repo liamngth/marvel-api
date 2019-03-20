@@ -1,0 +1,42 @@
+@import "../../variables";
+
+.Character-detail{
+  display: flex;
+  align-items: center;
+  border-bottom: $border-table;
+  div{
+    &:first-child{
+      padding-left: 5px;
+      width: 33.333333%;
+    }
+    &:last-child{
+      width: 66.666666%;
+      border-left: $border-table;
+      padding-left: 5px;
+      span{
+        &:first-child{
+          width: 90%;
+          display: inline-block;
+        }
+        &:last-child{
+          img{
+            padding: 5px;
+            width: 10%;
+            border-left: $border-table;
+          }
+        }
+      }
+    }
+  }
+}
+.modal-dialog{
+  transform: translate(0, 0)!important;
+}
+.modal-open{
+  .modal{
+    opacity: 1;
+  }
+}
+.Character-modal-img{
+  width: 100%;
+}

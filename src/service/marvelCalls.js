@@ -9,24 +9,17 @@ const marvelURL = 'https://gateway.marvel.com/v1/public/',
 const getMarvelCharacters = (options) => {
   const {
     offset,
-    name,
-    exactMatch,
     sortName,
     limit,
   } = Object.assign({
     offset: 0,
-    name: '',
-    exactMatch: false,
     sortName: '',
     limit: 20,
   }, options);
 
   let url =
     `${marvelURL}characters?${apiKey}&ts=${timeStamp}&hash=${hash}&offset=${offset}&orderBy=${sortName}name&limit=${limit}`;
-  if (name) {
-    if (exactMatch) { url += `&name=${name}`; }
-    else { url += `&nameStartsWith=${name}`; }
-  }
+
   return fetch(url)
     .then(res => res.json())
     .then((resObj) => {
@@ -52,7 +45,7 @@ const getMarvelCharacters = (options) => {
         };
       }
     });
-}
+};
 
 export {
   getMarvelCharacters,
