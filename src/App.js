@@ -93,8 +93,8 @@ class App extends Component {
                 <Character key={c.id} instance={c} />
               ))}
           </div>
+          {this.state.loading && <Loading />}
         </div>
-        {this.state.loading && <Loading />}
         <Paginator
           ref={paginator => (this.paginator = paginator)}
           page={this.state.page}
