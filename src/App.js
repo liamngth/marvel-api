@@ -2,20 +2,28 @@ import React, { Component } from 'react';
 import { getMarvelCharacters } from './service/marvelCalls';
 import Promise from 'promise';
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 import Header from './components/header';
 import Loading from './components/loading';
 import Character from './components/character';
 import Paginator from './components/paginator';
 
+library.add(faSortDown);
+
 class App extends Component {
-  state = {
-    loading: false,
-    sortName: '',
-    characters: [],
-    page: 0,
-    maxPage: 0,
-    limitPerPage: 10
-  };
+  constructor() {
+    super();
+    this.state = {
+      loading: false,
+      sortName: '',
+      characters: [],
+      page: 0,
+      maxPage: 0,
+      limitPerPage: 10
+    };
+  }
 
   componentDidMount() {
     this.search({ sortName: this.state.sortName });
@@ -69,6 +77,14 @@ class App extends Component {
     return p;
   };
 
+  sortName = () => {
+    const characters = this.state.characters;
+    characters.sort((a, b) => a - b).reverse();
+    this.setState({
+      characters: characters
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -84,7 +100,12 @@ class App extends Component {
         </nav>
         <div className="Character">
           <div className="Character-header">
-            <div className="font">Name</div>
+            <div className="font sort">
+              Name
+              <span onClick={this.sortName} className="Sort-by-name">
+                <FontAwesomeIcon icon="sort-down" />
+              </span>
+            </div>
             <div className="font">Description</div>
           </div>
           <div>
