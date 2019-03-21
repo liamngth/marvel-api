@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './style.css';
 
 class Comic extends Component {
   constructor(props) {
@@ -15,10 +16,18 @@ class Comic extends Component {
   }
   render() {
     return (
-      <div>
-        <img src={`${this.comicThumbnail}`} alt="Character Thumbnail" />
-        <span>{this.comicTitle}</span>
-        <span>{this.fullDescription}</span>
+      <div className="Comic-description">
+        <img
+          className="Comic-thumbnail"
+          src={`${this.comicThumbnail}`}
+          alt="Character Thumbnail"
+        />
+        <div>
+          <div>
+            <strong>{this.comicTitle}</strong>
+          </div>
+          <span>{this.fullDescription}</span>
+        </div>
       </div>
     );
   }

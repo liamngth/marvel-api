@@ -84,8 +84,8 @@ class App extends Component {
         </nav>
         <div className="Character">
           <div className="Character-header">
-            <div>Name</div>
-            <div>Description</div>
+            <div className="font">Name</div>
+            <div className="font">Description</div>
           </div>
           <div>
             {!this.state.loading &&

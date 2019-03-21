@@ -59,6 +59,7 @@ const getComicsByCharacter = (characterId, offset = 0) => {
   return fetch(url)
     .then(res => res.json())
     .then(resObj => {
+      console.log(resObj);
       try {
         if (resObj.code === 200) {
           return {

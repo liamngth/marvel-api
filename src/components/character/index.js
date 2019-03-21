@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 import Loading from '../loading';
 import Comic from '../comic';
 import Promise from 'promise';
 import { getComicsByCharacter } from '../../service/marvelCalls';
 import './style.css';
+
+library.add(faAngleDoubleRight);
 
 class Character extends Component {
   constructor(props, context) {
@@ -58,9 +63,14 @@ class Character extends Component {
   render() {
     return (
       <div className="Character-detail">
-        <div>{this.name}</div>
-        <div>
-          <span>{this.description}</span>
+        <div className="font">{this.name}</div>
+        <div className="small-icon">
+          <span>
+            <span className="font">{this.description}</span>
+            <span onClick={this.showDetails} className="Show-details">
+              <FontAwesomeIcon icon="angle-double-right" />
+            </span>
+          </span>
           <span className="Character-img" onClick={this.showDetails}>
             <img src={`${this.image}`} alt="Character Thumbnail" />
           </span>
@@ -70,16 +80,20 @@ class Character extends Component {
             <Modal.Title>{this.name}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <img
-              src={this.image}
-              alt={this.name}
-              className="Character-modal-img img-circle "
-            />
-            <div className="Character-modal-desc">
-              <h4>Description</h4>
-              <p>{this.fullDescription}</p>
+            <div className="Character-full-description">
+              <img
+                src={this.image}
+                alt={this.name}
+                className="Character-modal-img img-circle "
+              />
+              <div className="Character-modal-desc">
+                <h4>
+                  <strong className="font">Description</strong>
+                </h4>
+                <p>{this.fullDescription}</p>
+              </div>
             </div>
-            <div>
+            <div className="Comic-scroll">
               {!this.state.loading &&
                 this.state.comics.map(c => <Comic key={c.id} instance={c} />)}
             </div>
